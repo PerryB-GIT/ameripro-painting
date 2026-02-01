@@ -2,25 +2,165 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2d3748;
+  --primary: #8b2635;
+  --primary-light: #a63446;
+  --primary-dark: #6d1f2a;
+  --secondary: #2d6a4f;
+  --secondary-light: #40916c;
+  --accent: #8b2635;
+  --gray-light: #f7fafc;
+  --gray-medium: #718096;
+  --warm-white: #fdfcfb;
+  --charcoal: #1a202c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-opensans);
+  --font-display: var(--font-montserrat);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Hero gradient overlay - softer, more sophisticated */
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 38, 53, 0.88) 0%,
+    rgba(109, 31, 42, 0.75) 50%,
+    rgba(45, 55, 72, 0.85) 100%
+  );
+}
+
+/* Paint stroke accent */
+.paint-stroke {
+  position: relative;
+}
+
+.paint-stroke::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+  border-radius: 2px;
+}
+
+/* Brush stroke decoration */
+.brush-accent {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--secondary) 10%,
+    var(--secondary) 90%,
+    transparent 100%
+  );
+  height: 3px;
+}
+
+/* Service card hover effect */
+.service-card {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(139, 38, 53, 0.12);
+}
+
+/* CTA button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 38, 53, 0.25);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 135, 84, 0.3);
+}
+
+/* Testimonial card */
+.testimonial-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-left: 4px solid var(--secondary);
+}
+
+/* Section divider */
+.section-divider {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary) 20%,
+    var(--secondary) 50%,
+    var(--primary) 80%,
+    transparent 100%
+  );
+}
+
+/* Certification badge */
+.cert-badge {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+  color: white;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Billboard section */
+.billboard-glow {
+  box-shadow: 0 0 60px rgba(139, 38, 53, 0.2), 0 0 100px rgba(139, 38, 53, 0.08);
 }

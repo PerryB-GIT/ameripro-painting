@@ -2,17 +2,32 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #2d3748;
-  --primary: #8b2635;
-  --primary-light: #a63446;
-  --primary-dark: #6d1f2a;
-  --secondary: #2d6a4f;
-  --secondary-light: #40916c;
-  --accent: #8b2635;
-  --gray-light: #f7fafc;
-  --gray-medium: #718096;
-  --warm-white: #fdfcfb;
-  --charcoal: #1a202c;
+  --foreground: #1e293b;
+
+  /* Professional base palette */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+
+  /* Accent colors - used sparingly */
+  --accent-red: #8b2635;
+  --accent-red-light: #a63446;
+  --accent-green: #2d6a4f;
+  --accent-green-light: #40916c;
+
+  /* Legacy mappings */
+  --primary: var(--slate-800);
+  --primary-light: var(--slate-700);
+  --secondary: var(--accent-green);
+  --secondary-light: var(--accent-green-light);
+  --accent: var(--accent-red);
 }
 
 @theme inline {
@@ -20,7 +35,6 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
-  --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
   --color-secondary-light: var(--secondary-light);
   --color-accent: var(--accent);
@@ -38,17 +52,17 @@ body {
   font-family: var(--font-montserrat), sans-serif;
 }
 
-/* Hero gradient overlay - softer, more sophisticated */
+/* Hero gradient overlay - professional dark with subtle warmth */
 .hero-overlay {
   background: linear-gradient(
     135deg,
-    rgba(139, 38, 53, 0.88) 0%,
-    rgba(109, 31, 42, 0.75) 50%,
-    rgba(45, 55, 72, 0.85) 100%
+    rgba(15, 23, 42, 0.92) 0%,
+    rgba(30, 41, 59, 0.88) 50%,
+    rgba(51, 65, 85, 0.85) 100%
   );
 }
 
-/* Paint stroke accent */
+/* Paint stroke accent - subtle red/green */
 .paint-stroke {
   position: relative;
 }
@@ -59,8 +73,8 @@ body {
   bottom: -4px;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-green));
   border-radius: 2px;
 }
 
@@ -69,8 +83,8 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    var(--secondary) 10%,
-    var(--secondary) 90%,
+    var(--accent-green) 10%,
+    var(--accent-green) 90%,
     transparent 100%
   );
   height: 3px;
@@ -79,58 +93,73 @@ body {
 /* Service card hover effect */
 .service-card {
   transition: all 0.3s ease;
+  border: 1px solid var(--slate-200);
 }
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(139, 38, 53, 0.12);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  border-color: var(--slate-300);
 }
 
-/* CTA button styles */
+/* CTA button styles - professional with accent */
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  background: var(--slate-800);
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+  background: var(--slate-700);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(139, 38, 53, 0.25);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+  background: var(--accent-green);
   transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary) 100%);
+  background: var(--accent-green-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(26, 135, 84, 0.3);
+  box-shadow: 0 8px 20px rgba(45, 106, 79, 0.25);
+}
+
+/* Accent button - red */
+.btn-accent {
+  background: var(--accent-red);
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  background: var(--accent-red-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 38, 53, 0.25);
 }
 
 /* Testimonial card */
 .testimonial-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border-left: 4px solid var(--secondary);
+  background: linear-gradient(135deg, #ffffff 0%, var(--slate-50) 100%);
+  border-left: 4px solid var(--accent-green);
 }
 
-/* Section divider */
+/* Section divider - subtle accent colors */
 .section-divider {
-  height: 4px;
+  height: 2px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    var(--primary) 20%,
-    var(--secondary) 50%,
-    var(--primary) 80%,
+    var(--slate-300) 20%,
+    var(--accent-red) 45%,
+    var(--accent-green) 55%,
+    var(--slate-300) 80%,
     transparent 100%
   );
 }
 
 /* Certification badge */
 .cert-badge {
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+  background: var(--accent-green);
   color: white;
 }
 
@@ -162,5 +191,10 @@ body {
 
 /* Billboard section */
 .billboard-glow {
-  box-shadow: 0 0 60px rgba(139, 38, 53, 0.2), 0 0 100px rgba(139, 38, 53, 0.08);
+  box-shadow: 0 0 60px rgba(15, 23, 42, 0.15), 0 0 100px rgba(15, 23, 42, 0.05);
+}
+
+/* Professional link hover */
+a {
+  transition: color 0.2s ease;
 }

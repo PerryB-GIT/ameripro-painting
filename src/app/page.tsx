@@ -369,23 +369,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/1000021976.jpg"
-                  alt="AmeriPro team at work"
-                  width={600}
-                  height={500}
-                  className="object-cover w-full h-[500px]"
-                />
-              </div>
               {/* Decorative elements */}
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-slate-200 rounded-2xl -z-10" />
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-slate-100 rounded-2xl -z-10" />
-
-              {/* Stats card */}
-              <div className="absolute -bottom-8 -left-8 bg-white rounded-xl shadow-xl p-6 z-20">
-                <div className="text-4xl font-bold text-slate-800 font-display">9+</div>
-                <div className="text-gray-600">Years of Excellence</div>
+              <div className="w-full h-[400px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <div className="text-4xl font-bold text-slate-800 font-display">9+</div>
+                  <div className="text-gray-600">Years of Excellence</div>
+                </div>
               </div>
             </div>
 
@@ -557,37 +551,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-slate-800 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 text-lg">Location</h4>
-                    <p className="text-gray-600">
-                      482 Airport Rd<br />
-                      Laceys Spring, AL 35754
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-slate-800 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 text-lg">Business Hours</h4>
-                    <p className="text-gray-600">
-                      Monday - Friday: 7:00 AM - 6:00 PM<br />
-                      Saturday: By Appointment<br />
-                      Sunday: Closed
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -730,16 +693,6 @@ export default function Home() {
                     </svg>
                     (256) 606-3109
                   </a>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span>
-                    482 Airport Rd<br />
-                    Laceys Spring, AL 35754
-                  </span>
                 </li>
               </ul>
             </div>
